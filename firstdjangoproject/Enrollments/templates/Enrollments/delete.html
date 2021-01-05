@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+<form method="post" class="post-form" >
+    {% csrf_token %}
+    <fieldset disabled>
+        Enrollment ID: {{object.id}} <br>
+        Grade: {{object.grade}} <br>
+        course: {{object.course_id}} <br>
+        student: {{object.student_id}} <br>
+         <br>
+        <br>
+        Click YES to confirm
+    </fieldset>
+    <input type = "submit" class="btn btn-danger" value="YES">
+    <a href='/Enrollment' class="btn btn-light">Cancel</a>
+</form>
+{% endblock %}
+</body>
+</html>
